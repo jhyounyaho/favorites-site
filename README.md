@@ -96,4 +96,12 @@ https://sentry.io/welcome/
 https://prettier.io/                                                                             
 https://jsonplaceholder.typicode.com/                                                                             
                                                                              
-
+# 작업시 유용한 tools                                    
+postman - API 작업                                     
+https://www.postman.com/                                    
+reactjs 구글 개발자도구                                     
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/reviews?hl=ko&gl=UA                                    
+redux 구글 개발자도구                                    
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd                                    
+소스트리 - git GUI                                    
+https://www.sourcetreeapp.com/                                    

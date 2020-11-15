@@ -79,6 +79,10 @@ https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/
 php 공홈                                                                              
 https://www.php.net/                                                                             
                                                                                                                                                           
+# bycrypt                 
+비밀번호 암호화                  
+https://www.npmjs.com/package/bcrypt                 
+                 
 # etc                                                                                                                                                          
 호환성 체크                                                                                                                                                           
 https://caniuse.com/                                                                                                                                                          

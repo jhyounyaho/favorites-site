@@ -35,7 +35,9 @@ https://api.jquery.com/jquery.ajax/
 flex 설명                      
 https://getbootstrap.com/docs/4.4/utilities/flex/                     
                      
-# DB                     
+# DB                    
+mongoDB                    
+https://www.mongodb.com/                    
 firebase                      
 https://firebase.google.com/                     
 GraphQL                     

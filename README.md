@@ -100,8 +100,10 @@ https://jsonplaceholder.typicode.com/
                                                                              
 # 작업시 유용한 tools                                    
 postman - API 작업                                     
-https://www.postman.com/                                    
-reactjs 구글 개발자도구                                     
+https://www.postman.com/           
+postman 사용법           
+https://meetup.toast.com/posts/107           
+reactjs 구글 개발자도구                                                
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/reviews?hl=ko&gl=UA                                    
 redux 구글 개발자도구                                    
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd                                    

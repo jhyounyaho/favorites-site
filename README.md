@@ -76,7 +76,9 @@ Sourcetree
 https://www.atlassian.com/ko/software/sourcetree                  
 git ssh                 
 https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent                 
-                                                                                              
+git 참고                 
+https://backlog.com/git-tutorial/kr/stepup/stepup2_8.html                
+                
 # php                                                                             
 php 공홈                                                                              
 https://www.php.net/                                                                             

@@ -24,7 +24,7 @@ redux 공홈
 https://redux.js.org/                     
                          
 # Proxy                          
-CORS 정책으로 인한 에러시 proxy 사용                 
+CORS 정책으로 인한 에러시 proxy 사용 - Configuring the Proxy Manually 참고                           
 https://create-react-app.dev/docs/proxying-api-requests-in-development/                       
                        
 # javascript                      

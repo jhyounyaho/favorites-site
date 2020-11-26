@@ -22,7 +22,11 @@ https://reactrouter.com/web/guides/quick-start
 # Redux
 redux 공홈                      
 https://redux.js.org/                     
-                     
+                         
+# Proxy                          
+CORS 정책으로 인한 에러시 proxy 사용                 
+https://create-react-app.dev/docs/proxying-api-requests-in-development/                       
+                       
 # javascript                      
 생활코딩                      
 https://opentutorials.org/course/743                     

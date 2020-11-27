@@ -13,16 +13,18 @@ EeastFlag 홈페이지
 https://eastflag.co.kr/                     
 React Study                     
 http://scoreboard.eastflag.co.kr/                     
-https://reacttraining.com/             
-                 
-# Router            
+https://reacttraining.com/                 
+React Developer Tools - chrome                 
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko             
+                  
+# Router             
 React Router 예시      
 https://reactrouter.com/web/guides/quick-start            
                                
 # Redux
 redux 공홈                      
 https://redux.js.org/                     
-Redux DevTools                       
+Redux DevTools - chrome                   
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=ko                
                                    
 # Proxy                          

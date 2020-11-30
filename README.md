@@ -93,8 +93,12 @@ https://www.atlassian.com/ko/software/sourcetree
 git ssh                 
 https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent                 
 git 참고                 
-https://backlog.com/git-tutorial/kr/stepup/stepup2_8.html                
-                
+https://backlog.com/git-tutorial/kr/stepup/stepup2_8.html    
+git 기초정리                  
+https://pathas.tistory.com/211                                
+github fork - 소스트리 사용                           
+https://medium.com/axisj/github-fork-%EC%97%90%EC%84%9C-pull-request-%EA%B9%8C%EC%A7%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-merge-a22bdd097283             
+                         
 # php                                                                             
 php 공홈                                                                              
 https://www.php.net/                                                                             

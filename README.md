@@ -15,8 +15,10 @@ React Study
 http://scoreboard.eastflag.co.kr/                     
 https://reacttraining.com/                 
 React Developer Tools - chrome                 
-https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko             
-                  
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko        
+React에서 인풋 필드 validate 하기                                
+https://www.leejungdo.com/blog/2019/01/26/React%EC%97%90%EC%84%9C-%EC%9D%B8%ED%92%8B-%ED%95%84%EB%93%9C-validate%ED%95%98%EA%B8%B0.html                   
+                   
 # Router             
 React Router 예시      
 https://reactrouter.com/web/guides/quick-start            

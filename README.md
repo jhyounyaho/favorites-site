@@ -39,8 +39,10 @@ https://opentutorials.org/course/743
 w3schools.com                     
 https://www.w3schools.com/jsref/jsref_fill.asp                     
 MDN web docs                      
-https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript                     
-                     
+https://developer.mozilla.org/ko/docs/A_re-introduction_to_JavaScript      
+비동기 처리                   
+https://m.blog.naver.com/PostView.nhn?blogId=pjok1122&logNo=221645882773&proxyReferer=https:%2F%2Fwww.google.com%2F                      
+                  
 # jQuery                      
 jQuery 공홈                     
 https://api.jquery.com/jquery.ajax/                      

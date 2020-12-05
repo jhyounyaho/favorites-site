@@ -141,3 +141,7 @@ redux 구글 개발자도구
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd                                    
 소스트리 - git GUI                                    
 https://www.sourcetreeapp.com/                                    
+
+# 프론트엔드개발자에게 좋은 글
+[번역] 탁월한 프론트엔드 엔지니어가 되는 법                      
+https://hyunseob.github.io/2016/02/21/how-to-become-a-great-frontend-engineer/          

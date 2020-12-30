@@ -140,7 +140,9 @@ https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopl
 redux 구글 개발자도구                                    
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd                                    
 소스트리 - git GUI                                    
-https://www.sourcetreeapp.com/                                    
+https://www.sourcetreeapp.com/     
+구글 크롬 개발자 도구 공식 문서               
+https://developers.google.com/web/tools/chrome-devtools/              
 
 # 프론트엔드개발자에게 좋은 글
 [번역] 탁월한 프론트엔드 엔지니어가 되는 법                      

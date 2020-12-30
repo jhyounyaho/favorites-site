@@ -144,7 +144,9 @@ https://meetup.toast.com/posts/107
 reactjs 구글 개발자도구                                                
 https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi/reviews?hl=ko&gl=UA                                    
 redux 구글 개발자도구                                    
-https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd                                    
+https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd     
+Vuejs 구글 개발자도구                      
+https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd                    
 소스트리 - git GUI                                    
 https://www.sourcetreeapp.com/     
 구글 크롬 개발자 도구 공식 문서               

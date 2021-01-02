@@ -1,10 +1,20 @@
 # favorites-site                      
 
 # Vue.js             
-vue 공홈           
-https://kr.vuejs.org/    
-캡틴판교 Vue.js            
-https://joshua1988.github.io/vuejs/         
+Vue.js 공식 문서            
+https://kr.vuejs.org/                
+Vue.js 스타일 가이드                      
+https://vuejs.org/v2/style-guide/            
+Vue.js Cookbook            
+https://vuejs.org/v2/cookbook/            
+Vuex 공식 문서            
+https://vuex.vuejs.org/            
+VueRouter 공식 문서            
+https://router.vuejs.org/            
+Vue CLI 공식 문서            
+https://cli.vuejs.org/            
+캡틴판교 Vue.js                        
+https://joshua1988.github.io/vuejs/                     
           
 # React.js                     
 react 공홈                      

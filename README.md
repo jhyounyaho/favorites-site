@@ -124,6 +124,8 @@ github fork - 소스트리 사용
 https://medium.com/axisj/github-fork-%EC%97%90%EC%84%9C-pull-request-%EA%B9%8C%EC%A7%80-%EA%B7%B8%EB%A6%AC%EA%B3%A0-merge-a22bdd097283    
 github pr                    
 https://wayhome25.github.io/git/2017/07/08/git-first-pull-request-story/              
+GitHub Q&A - 팀 개발을 위한 Git GitHub 시작하기 (Issues탭에서 나와 같은 질문이 있는지 검색을 하고 없으면 New issue 클릭해서 새로운 질문 작성)         
+https://github.com/Cat-Hanbit/README           
                                  
 # php                                                                             
 php 공홈                                                                              

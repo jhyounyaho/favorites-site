@@ -14,7 +14,9 @@ https://router.vuejs.org/
 Vue CLI 공식 문서            
 https://cli.vuejs.org/            
 캡틴판교 Vue.js                        
-https://joshua1988.github.io/vuejs/                     
+https://joshua1988.github.io/vuejs/       
+Vue.js 모달 창          
+https://vuejs.org/v2/examples/modal.html       
           
 # React.js                     
 react 공홈                      

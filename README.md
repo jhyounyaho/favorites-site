@@ -141,7 +141,9 @@ https://caniuse.com/
 ESLint                                                                              
 https://eslint.org/                                                                             
 오픈컬러                                                                              
-https://yeun.github.io/open-color/                                                                             
+https://yeun.github.io/open-color/       
+파비콘 생성 사이트                              
+https://www.favicon-generator.org/                   
                                                                              
 https://snippet-generator.app/                                                                             
 https://sentry.io/welcome/                                                                             

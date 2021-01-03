@@ -143,7 +143,9 @@ https://eslint.org/
 오픈컬러                                                                              
 https://yeun.github.io/open-color/       
 파비콘 생성 사이트                              
-https://www.favicon-generator.org/                   
+https://www.favicon-generator.org/   
+awesome icon            
+https://fontawesome.com/icons?from=io                    
                                                                              
 https://snippet-generator.app/                                                                             
 https://sentry.io/welcome/                                                                             

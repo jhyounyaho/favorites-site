@@ -140,18 +140,22 @@ https://www.npmjs.com/package/bcrypt
 https://caniuse.com/                                                                                                                                                          
 ESLint                                                                              
 https://eslint.org/                                                                             
-오픈컬러                                                                              
-https://yeun.github.io/open-color/       
-파비콘 생성 사이트                              
-https://www.favicon-generator.org/   
-awesome icon            
-https://fontawesome.com/icons?from=io                    
-                                                                             
+                                                                                             
 https://snippet-generator.app/                                                                             
 https://sentry.io/welcome/                                                                             
 https://prettier.io/                                                                             
-https://jsonplaceholder.typicode.com/                                                                             
-                                                                             
+https://jsonplaceholder.typicode.com/      
+
+# 디자인
+오픈컬러                                                                              
+https://yeun.github.io/open-color/                  
+파비콘 생성 사이트                              
+https://www.favicon-generator.org/   
+awesome icon            
+https://fontawesome.com/icons?from=io    
+google font - ubuntu             
+https://fonts.google.com/specimen/Ubuntu          
+                                                                              
 # 작업시 유용한 tools                                    
 postman - API 작업                                     
 https://www.postman.com/           

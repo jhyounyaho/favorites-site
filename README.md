@@ -50,7 +50,11 @@ https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfk
 # Proxy                          
 CORS 정책으로 인한 에러시 proxy 사용 - Configuring the Proxy Manually 참고                           
 https://create-react-app.dev/docs/proxying-api-requests-in-development/                       
-                       
+    
+# Typescript
+캡틴판교 - 타입스크립트 핸드북
+https://joshua1988.github.io/ts/intro.html
+    
 # javascript                      
 생활코딩                      
 https://opentutorials.org/course/743                     

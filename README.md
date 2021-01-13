@@ -161,6 +161,10 @@ awesome icon
 https://fontawesome.com/icons?from=io    
 google font - ubuntu             
 https://fonts.google.com/specimen/Ubuntu          
+
+# 배포
+호스팅 사이트를 사용하여 배포하기       
+https://www.netlify.com/           
                                                                               
 # 작업시 유용한 tools                                    
 postman - API 작업                                     

@@ -165,6 +165,8 @@ https://fonts.google.com/specimen/Ubuntu
 # 배포
 호스팅 사이트를 사용하여 배포하기       
 https://www.netlify.com/           
+Vue.js에서 배포관련 DOC 
+https://cli.vuejs.org/guide/deployment.html#gitlab-pages
                                                                               
 # 작업시 유용한 tools                                    
 postman - API 작업                                     

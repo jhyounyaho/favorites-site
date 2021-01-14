@@ -101,7 +101,11 @@ https://joshua1988.github.io/webpack-guide/guide.html
 npm 공홈                                                                             
 https://www.npmjs.com/                        
 npm 에러 - ENOENT: no such file or directory                        
-https://mia-dahae.tistory.com/89                       
+https://mia-dahae.tistory.com/89               
+
+# nvm 
+nvm 설치 방법 (전제조건 : python 설치)                  
+https://github.com/nvm-sh/nvm#installing-and-updating
                                                                                                    
 # Coding                                                                             
 https://codepen.io/                                                                             

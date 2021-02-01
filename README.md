@@ -150,7 +150,10 @@ https://www.npmjs.com/package/bcrypt
                  
 # etc                                                                                                                                                          
 호환성 체크                                                                                                                                                           
-https://caniuse.com/                                                                                                                                                          
+https://caniuse.com/         
+drag & drop
+https://github.com/bevacqua/dragula             
+         
 ESLint                                                                              
 https://eslint.org/                                                                             
                                                                                              

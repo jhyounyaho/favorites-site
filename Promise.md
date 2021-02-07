@@ -123,22 +123,10 @@ import {
 } from '../api/index.js'
 
 export default {
-    // 포켓몬 리스트
-    FETCH_POKE_LIST({ commit }, { offset, limit }) {
-        fetchPokeList(offset, limit)  // 1. return 없어도 될까?
-            .then(({ data }) => {
-                data.results.forEach(poke => {
-                    const pokeSplit = poke.url.split('/')
-                    poke.id = pokeSplit[pokeSplit.length - 2]
-                })
-                commit('SET_POKE_LIST', data.results)
-            })
-            .catch(err => console.log(err))
-    },
     // 포켓몬 정보
     FETCH_POKE_INFO({ commit }, id) {
-        return fetchPokeInfo(id) // 2. return이 있어야 할까? 
-            .then(res => res.status === 200 && commit('SET_POKE_INFO', res.data))
+        return fetchPokeInfo(id) // 1. promise를 return해야 할까?
+            .then(res => res.status === 200 && commit('SET_POKE_INFO', res.data)) // 2. then, catch 내부에 return이 있어야 할까? 
             .catch(err => { 
                 console.log(err)
                 throw err
@@ -146,7 +134,21 @@ export default {
     },
 }
 ```
-## 2. return이 있어야 할까? 
+#### components/PokeSearch.vue 
+```
+     this.FETCH_POKE_INFO(this.pokeId)
+          .catch(err => { 
+            if (err.response.status === 404) {
+              this.FailMessage = '해당 숫자에 맞는 포켓몬이 없습니다.';
+            } else {
+              this.FailMessage = '잠시 후 다시 시도해 주세요.';
+            }
+            this.showModal = true
+            return false
+          })
+```
+                                 
+## 1. promise를 return해야 할까?
 #### 현재 상황 
 FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있다.(ex 404일 경우 alert 노출)        
 따라서 return 으로 promise를 반환하여 err를 전달해야한다.    
@@ -159,9 +161,13 @@ err.response.status === 404 를 체크하여 경고창을 노출 하였다.
 에러 핸들링에서 필요한 내용이 리턴되지 않은 것을 확인 할 수 있다. 
 ![noreturn_catch](https://user-images.githubusercontent.com/42309919/107148492-bc4b6280-6996-11eb-92a7-1432f41b1a3b.PNG)
 #### 결론
-반환된 promise를 가지고 추가 작업이 필요할 경우 return 해주자!                                
-ex) 반환된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 에러 핸들링이 필요할때                       
+반환된 promise를 가지고 성공, 실패 여부에 따라 데이터를 보내줘야 할 경우 return 해주자!                  
 
+## 2. then, catch 내부에 return이 있어야 할까? 
+then 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 성공시 추가 작업을 해주고 있지 않기 때문에 return 하고 있지 않다.  
+catch 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 실패시 에러핸들링을 해주고 있기 때문에 throw err를 해주고 있다. 
+#### 결론 
+비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!    
 
 ***
 ## 참고

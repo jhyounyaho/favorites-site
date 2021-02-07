@@ -147,6 +147,7 @@ export default {
 }
 ```
 ## 2. return이 있어야 할까? 
+#### 현재 상황 
 FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있다.(ex 404일 경우 alert 노출)        
 따라서 return 으로 promise를 반환하여 err를 전달해야한다.    
 #### return 해 줄 경우

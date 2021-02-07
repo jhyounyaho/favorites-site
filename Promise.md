@@ -97,6 +97,9 @@ return apiPromise
 ```
 axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Promise 객체를 반환한다. api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다. 
 
+#### Using Axios in Vuex Actions
+Vuex actions에서 Axios를 사용법 예제       
+https://mclassdesigns.gitbook.io/js-journal/
 
 
 *** 
@@ -197,5 +200,3 @@ https://stackoverflow.com/questions/49967779/axios-handling-errors
 https://stackoverflow.com/questions/43463989/returning-an-axios-promise-from-function
 #### Vuex dispatch action - Is this correct?
 https://forum.vuejs.org/t/vuex-dispatch-action-is-this-correct/24824    
-#### Using Axios in Vuex Actions
-https://mclassdesigns.gitbook.io/js-journal/

@@ -170,12 +170,12 @@ return으로 Vuex actions 내에서 axios 요청을 반환함으로서 promise�
 then 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 성공시 추가 작업을 해주고 있지 않기 때문에 return 하고 있지 않다.  
 catch 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 실패시 에러핸들링을 해주고 있기 때문에 throw err를 해주고 있다. 
 #### return || throw 해 줄 경우
-정상적으로 체크되는 것을 확인 할 수 있다.
+정상적으로 체크되는 것을 확인 할 수 있다.                                          
 ![return_err](https://user-images.githubusercontent.com/42309919/107149715-852c7f80-699d-11eb-9af7-5c608284e782.PNG)           
 #### return 안 해 줄 경우
-데이터가 넘어오지 않기 때문에 console.log가 찍히지 않는다.           
-#### 결론 
-비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!    
+데이터가 넘어오지 않기 때문에 console.log가 찍히지 않는다.                             
+#### 결론              
+비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!           
 
 ***
 ## 참고

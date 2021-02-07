@@ -183,3 +183,5 @@ https://zzossig.io/posts/javascript/what_is_the_promise/
 https://stackoverflow.com/questions/49967779/axios-handling-errors      
 #### Returning an Axios Promise from function
 https://stackoverflow.com/questions/43463989/returning-an-axios-promise-from-function
+#### Vuex dispatch action - Is this correct?
+https://forum.vuejs.org/t/vuex-dispatch-action-is-this-correct/24824       

@@ -84,8 +84,14 @@ const apiPromise = axios.get('https://jsonplaceholder.typicode.com/posts');
 apiPromise; // // 보류(pending)
 
 return apiPromise
-  .then(data => console.log(data)); // 이행
-  .catch(err => console.log(err)); // 거부
+  .then(res => {
+    console.log(res)
+    return res
+  }) // 이행
+  .catch(err => {
+    console.log(err)
+    throw err
+   }); // 거부
 ```
 axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Promise 객체를 반환한다. api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다. 
 
@@ -117,17 +123,34 @@ import {
 } from '../api/index.js'
 
 export default {
-    // 포켓몬 정보
-    FETCH_POKE_INFO({ commit }, id) {
-        fetchPokeInfo(id)
+    // 포켓몬 리스트
+    FETCH_POKE_LIST({ commit }, { offset, limit }) {
+        fetchPokeList(offset, limit)  // 1. return 없어도 될까?
             .then(({ data }) => {
-                commit('GET_POKE_INFO', data)
-                return data;
+                data.results.forEach(poke => {
+                    const pokeSplit = poke.url.split('/')
+                    poke.id = pokeSplit[pokeSplit.length - 2]
+                })
+                commit('SET_POKE_LIST', data.results)
             })
             .catch(err => console.log(err))
     },
+    // 포켓몬 정보
+    FETCH_POKE_INFO({ commit }, id) {
+        return fetchPokeInfo(id) // 2. return이 있어야 할까? 
+            .then(res => res.status === 200 && commit('SET_POKE_INFO', res.data))
+            .catch(err => { 
+                console.log(err)
+                throw err
+            })
+    },
 }
 ```
+## 2. return이 있어야 할까? 
+FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있다.(ex 404일 경우 alert 노출)        
+따라서 return 으로 promise를 반환하여 err를 전달해야한다.    
+#### return 해 줄 경우
+#### return 안 해 줄 경우 
 
 ***
 ## 참고

@@ -150,28 +150,30 @@ export default {
           })
 ```
                                  
-## 1. promise를 return해야 할까?
-#### 현재 상황 
-FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있다.(ex 404일 경우 alert 노출)        
-따라서 return 으로 promise를 반환하여 err를 전달해야한다.    
+## 1. promise를 return해야 할까?  
 #### return 해 줄 경우
 에러 핸들링에서 필요한 내용이 리턴된 것을 확인 할 수 있다.         
 err.response.status === 404 를 체크하여 경고창을 노출 하였다. 
 ![return_catch](https://user-images.githubusercontent.com/42309919/107148494-bce3f900-6996-11eb-97b0-52060aa35931.PNG)
-![return_catch2](https://user-images.githubusercontent.com/42309919/107148607-7cd14600-6997-11eb-8b79-dde7a7216af2.PNG)
+
 #### return 안 해 줄 경우 
 에러 핸들링에서 필요한 내용이 리턴되지 않은 것을 확인 할 수 있다. 
-![noreturn_catch](https://user-images.githubusercontent.com/42309919/107148492-bc4b6280-6996-11eb-92a7-1432f41b1a3b.PNG)
+![noreturn_catch](https://user-images.githubusercontent.com/42309919/107148492-bc4b6280-6996-11eb-92a7-1432f41b1a3b.PNG)  
+                
 #### 결론
-axios는 promise 기반이다.  
-return으로 Vuex actions 내에서 axios 요청을 반환함으로서 promise객체를 반환 해야한다.  
+axios는 promise 기반이다. **따라서, Vuex actions내에서 return으로 axios 요청을하여 promise객체를 반환해야한다.**
 
 ## 2. then, catch 내부에 return이 있어야 할까? 
+#### 현재 상황 
+FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있다.(ex 404일 경우 alert 노출)        
+따라서 return 으로 promise를 반환하여 err를 전달해야한다.  
+
 then 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 성공시 추가 작업을 해주고 있지 않기 때문에 return 하고 있지 않다.  
 catch 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 실패시 에러핸들링을 해주고 있기 때문에 throw err를 해주고 있다. 
 #### return || throw 해 줄 경우
 정상적으로 체크되는 것을 확인 할 수 있다.                                          
-![return_err](https://user-images.githubusercontent.com/42309919/107149715-852c7f80-699d-11eb-9af7-5c608284e782.PNG)           
+![return_err](https://user-images.githubusercontent.com/42309919/107149715-852c7f80-699d-11eb-9af7-5c608284e782.PNG) 
+![return_catch2](https://user-images.githubusercontent.com/42309919/107148607-7cd14600-6997-11eb-8b79-dde7a7216af2.PNG)
 #### return 안 해 줄 경우
 데이터가 넘어오지 않기 때문에 console.log가 찍히지 않는다.                             
 #### 결론              

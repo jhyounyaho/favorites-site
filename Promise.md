@@ -151,7 +151,9 @@ FETCH_POKE_INFO 에서 리턴된 err를 가지고 유효성 체크를 하고있�
 따라서 return 으로 promise를 반환하여 err를 전달해야한다.    
 #### return 해 줄 경우
 에러 핸들링에서 필요한 내용이 리턴된 것을 확인 할 수 있다.         
+err.response.status === 404 를 체크하여 경고창을 노출 하였다. 
 ![return_catch](https://user-images.githubusercontent.com/42309919/107148494-bce3f900-6996-11eb-97b0-52060aa35931.PNG)
+![return_catch2](https://user-images.githubusercontent.com/42309919/107148607-7cd14600-6997-11eb-8b79-dde7a7216af2.PNG)
 #### return 안 해 줄 경우 
 에러 핸들링에서 필요한 내용이 리턴되지 않은 것을 확인 할 수 있다. 
 ![noreturn_catch](https://user-images.githubusercontent.com/42309919/107148492-bc4b6280-6996-11eb-92a7-1432f41b1a3b.PNG)

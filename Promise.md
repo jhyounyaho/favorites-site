@@ -6,18 +6,6 @@
 
 return 관련 코드와 관련해 Promise 에 대해 조사
 
-## javascript
-자바스크립트는 싱글스레드 언어입니다. 싱글스레드는 말 그대로 한번에 하나의 작업만 수행할 수 있음을 의미합니다.             
-자바스크립트는 비동기로 동작하기 때문에 싱글스레드에도 불구하고 동시에 많은 작업을 수행합니다. 
-
-## 비동기 처리란? 
-자바스크립트의 비동기 처리란 특정 코드의 연산이 끝날 때까지 코드의 실행을 멈추지 않고 다음 코드를 먼저 실행하는 자바스크립트의 특성의 의미합니다. 
-
-## javascript 비동기 처리
-- 콜백함수
-- promise(ES6)
-- Asnyc / Await(ES7)
-
 ## Promise 란?
  프로미스는 ES6에서 자바스크립트 **비동기 처리**를 다루기 위해 사용되는 객체입니다. 여기서 자바스크립트의 비동기 처리란 ‘특정 코드의 실행이 완료될 때까지 기다리지 않고 다음 코드를 먼저 수행하는 자바스크립트의 특성’을 의미합니다.          
  프로미스가 생성될 때 꼭 알 수 있지는 않은 값을 위한 대리자로, 비동기 연산이 종료된 이후의 결과값이나 실패 이유를 처리하기 위한 처리기를 연결할 수 있도록 합니다. 프로미스를 사용하면 비동기 메서드에서 마치 동기 메서드처럼 값을 반환할 수 있습니다. 다만 최종 결과를 반환하지는 않고, 대신 프로미스를 반환해서 미래의 어떤 시점에 결과를 제공합니다.       
@@ -83,9 +71,6 @@ return getData().then().catch(function(err) {
 });
 ```
  
-
-                   
-
 ## Promise와 api
 보통 promise는 api요청을 하고 난 직후, 요청의 결과값으로 받는 경우가 많다. api요청의 경우, 서버에서 처리하고 데이터를 전달하기 까지 시간이 소요된다. 이런 시간 소요를 고려하여 이를 비동기적으로 처리하고자 api요청을 하면 요청의 결과값을 바로 주는게 아니라 Promise를 리턴한다. 요청하는 쪽에서는 이 Promise를 가지고 의사 결정을 할 수 있다. 
 
@@ -94,7 +79,7 @@ Axios는 브라우저, Node.js를 위한 **Promise API**를 활용하는 HTTP �
 ```
 import axios from 'axios';
 
-var apiPromise = axios.get('https://jsonplaceholder.typicode.com/posts');
+const apiPromise = axios.get('https://jsonplaceholder.typicode.com/posts');
 
 apiPromise; // // 보류(pending)
 

@@ -85,13 +85,15 @@ apiPromise; // // 보류(pending)
 
 return apiPromise
   .then(res => {
+    // 이행 Axios promise is resolved
     console.log(res)
     return res
-  }) // 이행
+  }) 
   .catch(err => {
+    // 거부 Axios promise is rejected
     console.log(err)
     throw err
-   }); // 거부
+   }); 
 ```
 axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Promise 객체를 반환한다. api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다. 
 
@@ -161,11 +163,17 @@ err.response.status === 404 를 체크하여 경고창을 노출 하였다.
 에러 핸들링에서 필요한 내용이 리턴되지 않은 것을 확인 할 수 있다. 
 ![noreturn_catch](https://user-images.githubusercontent.com/42309919/107148492-bc4b6280-6996-11eb-92a7-1432f41b1a3b.PNG)
 #### 결론
-반환된 promise를 가지고 성공, 실패 여부에 따라 데이터를 보내줘야 할 경우 return 해주자!                  
+axios는 promise 기반이다.  
+return으로 Vuex actions 내에서 axios 요청을 반환함으로서 promise객체를 반환 해야한다.  
 
 ## 2. then, catch 내부에 return이 있어야 할까? 
 then 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 성공시 추가 작업을 해주고 있지 않기 때문에 return 하고 있지 않다.  
 catch 에서는 FETCH_POKE_INFO를 호출한 컴포넌트에서 실패시 에러핸들링을 해주고 있기 때문에 throw err를 해주고 있다. 
+#### return || throw 해 줄 경우
+정상적으로 체크되는 것을 확인 할 수 있다.
+![return_err](https://user-images.githubusercontent.com/42309919/107149715-852c7f80-699d-11eb-9af7-5c608284e782.PNG)           
+#### return 안 해 줄 경우
+데이터가 넘어오지 않기 때문에 console.log가 찍히지 않는다.           
 #### 결론 
 비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!    
 

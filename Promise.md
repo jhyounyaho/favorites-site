@@ -157,4 +157,6 @@ https://stackoverflow.com/questions/48980380/returning-data-from-axios-api
 ### 자바스크립트 Promise 이해하기
 https://zzossig.io/posts/javascript/what_is_the_promise/        
 #### Axios handling errors         
-https://stackoverflow.com/questions/49967779/axios-handling-errors       
+https://stackoverflow.com/questions/49967779/axios-handling-errors      
+#### Returning an Axios Promise from function
+https://stackoverflow.com/questions/43463989/returning-an-axios-promise-from-function

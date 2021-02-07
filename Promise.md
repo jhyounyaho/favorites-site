@@ -100,7 +100,9 @@ axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Pr
 
 
 *** 
-## 예제로 알아보자!
+## 예제로 알아보자! 
+Vuex actions에서 Axios를 사용하여 비동기 작업 할 경우         
+                             
 ##### src/api/index.js 
 ```
 import axios from "axios";

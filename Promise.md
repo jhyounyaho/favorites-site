@@ -52,7 +52,7 @@ function getData() {
 }
 
 // 위 $.get() 호출 결과에 따라 'response' 또는 'Error' 출력
-getData()
+return getData()
   .then(data => console.log(data)) // 이행 response 값 출력
   .catch(err => console.error(err)) // 거부 Error 출력
 ```
@@ -70,16 +70,16 @@ getData(userInfo)
 **더 많은 예외 처리 상황을 위해 프로미스 catch()로 예외 처리 하는 것을 권장한다.**              
 1.then()의 두 번째 인자로 에러를 처리하는 방법        
 ```
-getData().then(function() {
+return getData().then(function() {
   // ...
 }, function(err) {
-  console.log(err);
+  throw err
 });
 ```                
 2.catch()를 이용하는 방법                 
 ```
-getData().then().catch(function(err) {
-  console.log(err);
+return getData().then().catch(function(err) {
+  throw err
 });
 ```
  
@@ -98,15 +98,13 @@ var apiPromise = axios.get('https://jsonplaceholder.typicode.com/posts');
 
 apiPromise; // // 보류(pending)
 
-apiPromise
+return apiPromise
   .then(data => console.log(data)); // 이행
   .catch(err => console.log(err)); // 거부
 ```
 axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Promise 객체를 반환한다. api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다. 
 
 
-
-## fetch / axios 
 
 *** 
 ## 예제로 알아보자!

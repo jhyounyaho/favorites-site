@@ -214,12 +214,8 @@ Axios 핸들러에서 디스패치 호출로 response, error를 반환하여 정
 대신 response, error 모두 then()에 의해 처리 된다.     
 
 #### 디스패치 호출의 catch()에서 오류를 반환하고 싶은데 어떻게 변경 해줘야 할까?
-return Promise.resolve(error) or throw err 
+```return Promise.resolve(error) or throw err ```                      
 로 변경해주면 디스패치 호출의 catch()에서 오류를 반환 할 수 있다. 
-
-#### 왜 이런 현상이 나타날까
-Axios 의 err가 catch()가 아닌 then() 메서드에 의해 처리되는 이유는 Axios의 promise는 resolve 되었다고 믿고 있기 때문이다. 이건 javascript Promise의 기본 동작이며 Axios의 전용 기능이 아니다. 
-
 ```
 actions: {
     myAction() {
@@ -233,6 +229,11 @@ actions: {
     }
 }
 ```
+#### 왜 이런 현상이 나타날까
+Axios 의 err가 catch()가 아닌 then() 메서드에 의해 처리되는 이유는 Axios의 promise는 resolve 되었다고 믿고 있기 때문이다.                      
+이건 javascript Promise의 기본 동작이며 Axios의 전용 기능이 아니다. 
+
+                                
 ***
 ## 참고
 ### [번역] async/await 를 사용하기 전에 promise를 이해하기

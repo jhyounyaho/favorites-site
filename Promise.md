@@ -214,7 +214,7 @@ Axios 핸들러에서 디스패치 호출로 response, error를 반환하여 정
 대신 response, error 모두 then()에 의해 처리 된다.     
 
 #### 디스패치 호출의 catch()에서 오류를 반환하고 싶은데 어떻게 변경 해줘야 할까?
-```return Promise.resolve(error) or throw err ```                      
+```return Promise.reject(error) or throw err ```                      
 로 변경해주면 디스패치 호출의 catch()에서 오류를 반환 할 수 있다. 
 - Promise.reject(reason): 주어진 이유(reason)로 거부된 Promise 객체를 반환하여 catch로 전달된다. return 처럼 제어 흐름을 종료하지 않는다.                      
 - throw reaseon: 사용자 정의 예외를 던질 수 있다. catch로 전달된다. return 처럼 제어 흐름을 종료한다. 

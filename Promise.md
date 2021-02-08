@@ -72,28 +72,43 @@ return getData().then().catch(function(err) {
 ![axios+vuex](https://user-images.githubusercontent.com/42309919/107175877-459f7b00-6a11-11eb-93a7-bccded871264.png)
 
 ### Axios란?
-Axios는 브라우저, Node.js를 위한 **Promise API**를 활용하는 HTTP 비동기 통신 라이브러리
+Axios는 브라우저, Node.js를 위한 **Promise API**를 활용하는 HTTP 비동기 통신 라이브러리로서 
+Vuex actions는 promise를 리턴 할 수 있다. 
+
+#### Vuex Action
 ```
 import axios from 'axios';
 
-const apiPromise = axios.get('https://jsonplaceholder.typicode.com/posts');
-
-apiPromise; // // 보류(pending)
-
-return apiPromise
-  .then(res => {
-    // 이행 Axios promise is resolved
-    console.log(res)
-    return res
-  }) 
-  .catch(err => {
-    // 거부 Axios promise is rejected
-    console.log(err)
-    throw err
-   }); 
+actions: {
+    myAction() {
+        // Returns a promise object to the calling function (ex. 'dispatch()')
+        return axios.get('https://jsonplaceholder.typicode.com/posts')  
+        .then(response => {
+            // Axios promise is resolved 
+            return response
+        }).catch(error => {
+            // Axios promise is rejected  
+            return Promise.resolve(error)   
+        })
+    }
+}
 ```
-axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 Promise 객체를 반환한다.                              
-api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다.              
+
+#### Dispatch
+```
+store.dispatch('myAction')
+.then(response => {
+    // Axios returned Promise.resolve(response)
+    console.log(response)
+}).catch(error => {
+    // Axios returned Promise.reject(error)
+    // For example, the desired API endpoint was not found (i.e. 404 response code) 
+    console.log(error)
+}
+```
+
+axios.get 함수는 위에서 ```new Promise(function...)``` 형태로 만든 **Promise 객체를 반환(return)** 한다.                               
+api 요청이 성공했을 때와 실패했을 때의 구현은 axios가 하게 됨으로 사용자 입장에서는 반환된 Promise객체를 가지고 ```then()```을 사용하여 Promise의 콜백을 수행하고, reject가 되었을 때를 대비하여 ```catch()``` 등을 사용하면 된다.              
 
 #### Using Axios in Vuex Actions
 Vuex actions에서 Axios를 사용법 예제       
@@ -121,6 +136,7 @@ export {
     fetchPokeInfo,
 }
 ```
+
 ##### src/store/actions.js
 ```
 import {
@@ -131,10 +147,16 @@ export default {
     // 포켓몬 정보
     FETCH_POKE_INFO({ commit }, id) {
         return fetchPokeInfo(id) // 1. promise를 return해야 할까?
-            .then(res => res.status === 200 && commit('SET_POKE_INFO', res.data)) // 2. then, catch 내부에 return이 있어야 할까? 
+            .then(res => {
+                // 2. then, catch 내부에 return이 꼭 있어야 할까? 
+                // 3. 여기서 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까? 
+                return res
+                res.status === 200 && commit('SET_POKE_INFO', res.data)
+             }) 
             .catch(err => { 
+                // 4. 여기서 return err를 하게 된다면 어떻게 될까? 
                 console.log(err)
-                throw err // 3. return err를 하게 된다면 어떻게 될까? 
+                throw err 
             })
     },
 }
@@ -179,15 +201,37 @@ err.response.status === 404 를 체크하여 경고창을 노출 하였다.
 ![return_catch2](https://user-images.githubusercontent.com/42309919/107148607-7cd14600-6997-11eb-8b79-dde7a7216af2.PNG)                              
 #### return 안 해 줄 경우
 데이터가 넘어오지 않기 때문에 console.log가 찍히지 않는다.                             
-#### 결론              
-비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!           
+#### 결론        
+Axios 핸들러에서 디스패치 호출로 response, error를 반환하여 정의되지 않은 문제를 해결할 수 있다. 비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!           
 
-## 3. return err를 하게 된다면 어떻게 될까? 
-#### return err 로 err 넘겨 줄 경우
-#### throw err 로 err 넘겨 줄 경우
-#### 다른방법도 있을까?
-return Promise.reject(err) 해준다. 
+## 3. 여기서 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까?
+응답 성공시 디스패치 호출의 then() 핸들러에 대한 응답을 반환한다.   
 
+## 4. 여기서 return err를 하게 된다면 어떻게 될까? 
+#### return err 로 err 넘겨 줄 경우          
+디스패치 호출의 catch() 핸들러에서 오류를 반환하지 않는다.          
+대신 response, error 모두 then()에 의해 처리 된다.     
+
+#### 디스패치 호출의 catch()에서 오류를 반환하고 싶은데 어떻게 변경 해줘야 할까?
+return Promise.resolve(error) or throw err 
+로 변경해주면 디스패치 호출의 catch()에서 오류를 반환 할 수 있다. 
+
+#### 왜 이런 현상이 나타날까
+Axios 의 err가 catch()가 아닌 then() 메서드에 의해 처리되는 이유는 Axios의 promise는 resolve 되었다고 믿고 있기 때문이다. 이건 javascript Promise의 기본 동작이며 Axios의 전용 기능이 아니다. 
+
+```
+actions: {
+    myAction() {
+        return axios.get('/api').then(response => {
+            return Promise.resolve(response)
+        }).catch(error => {
+            return Promise.resolve(error)
+            or 
+            throw err
+        })
+    }
+}
+```
 ***
 ## 참고
 ### [번역] async/await 를 사용하기 전에 promise를 이해하기

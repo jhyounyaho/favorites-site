@@ -149,12 +149,12 @@ export default {
         return fetchPokeInfo(id) // 1. promise를 return해야 할까?
             .then(res => {
                 // 2. then, catch 내부에 return이 꼭 있어야 할까? 
-                // 3. 여기서 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까? 
+                // 3. 성공시 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까? 
                 return res
                 res.status === 200 && commit('SET_POKE_INFO', res.data)
              }) 
             .catch(err => { 
-                // 4. 여기서 return err를 하게 된다면 어떻게 될까? 
+                // 4. 실패시 return err를 하게 된다면 어떻게 될까? 
                 console.log(err)
                 throw err 
             })
@@ -205,10 +205,10 @@ err.response.status === 404 를 체크하여 경고창을 노출 하였다.
 Axios 핸들러에서 디스패치 호출로 response, error를 반환하여 정의되지 않은 문제를 해결할 수 있다.                                       
 비동기 성공, 실패시 리턴된 값을 변수에 저장하거나 UI에 뿌려줘야 할때, 유효성 체크 등 추가 작업이 필요할 경우 return, throw 등을 해주자!           
 
-## 3. 여기서 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까?
+## 3. 성공시 return하게 된다면 디스패치 호출에서는 어디서 응답을 반환할까?
 응답 성공시 디스패치 호출의 then() 핸들러에 대한 응답을 반환한다.   
 
-## 4. 여기서 return err를 하게 된다면 어떻게 될까? 
+## 4. 실패시 return err를 하게 된다면 어떻게 될까? 
 #### return err 로 err 넘겨 줄 경우          
 디스패치 호출의 catch() 핸들러에서 오류를 반환하지 않는다.          
 대신 response, error 모두 then()에 의해 처리 된다.     

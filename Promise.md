@@ -68,6 +68,9 @@ return getData().then().catch(function(err) {
 ## Promise와 api
 보통 promise는 api요청을 하고 난 직후, 요청의 결과값으로 받는 경우가 많다. api요청의 경우, 서버에서 처리하고 데이터를 전달하기 까지 시간이 소요된다. 이런 시간 소요를 고려하여 이를 비동기적으로 처리하고자 api요청을 하면 요청의 결과값을 바로 주는게 아니라 Promise를 리턴한다. 요청하는 쪽에서는 이 Promise를 가지고 의사 결정을 할 수 있다. 
 
+## Vuex에서 axios 사용하기 
+![axios+vuex](https://user-images.githubusercontent.com/42309919/107175877-459f7b00-6a11-11eb-93a7-bccded871264.png)
+
 ### Axios란?
 Axios는 브라우저, Node.js를 위한 **Promise API**를 활용하는 HTTP 비동기 통신 라이브러리
 ```

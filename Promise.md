@@ -88,7 +88,7 @@ actions: {
             return response
         }).catch(error => {
             // Axios promise is rejected  
-            return Promise.resolve(error)   
+            return Promise.reject(error)   
         })
     }
 }

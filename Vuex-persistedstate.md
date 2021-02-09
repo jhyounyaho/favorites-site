@@ -13,7 +13,9 @@ store의 mutations에서 자동으로 저장하고 영구적으로 만든다.
 Vuex-persist를 사용하여 쿠키, localStorage, sessionStorage 에 저장 할 수 있다.
 **Vuex 상태를 수동 및 부분적으로 저장했다면, Vuex-persist를 사용해보자.**   
 
-
+## vuex-persist vs vuex-persistedstate
+#### 다운로드 비교 
+https://www.npmtrends.com/vuex-persist-vs-vuex-persistedstate
 
 ***
 ## 참고

@@ -20,3 +20,5 @@ Vuex-persist를 사용하여 쿠키, localStorage, sessionStorage 에 저장 할
 #### LocalStorage vs Vuex-persist in Vue.js
 https://renatello.com/localstorage-vs-vuex-persist/
 
+#### vuex-persistedstate 덕분에 Vue.js 화면을 새로고침 해도 안전해요.
+https://uxgjs.tistory.com/207

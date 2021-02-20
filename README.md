@@ -180,7 +180,9 @@ https://cli.vuejs.org/guide/deployment.html#gitlab-pages
                                                                               
 # 작업시 유용한 tools                                    
 postman - API 작업                                     
-https://www.postman.com/           
+https://www.postman.com/                          
+swagger 개발자가 REST 웹 서비스를 설계, 빌드, 문서화, 소비하는 일을 도와주는 대형 도구 생태계의 지원을 받는 오픈 소스 소프트웨어 프레임워크                 
+https://swagger.io/                     
 postman 사용법           
 https://meetup.toast.com/posts/107           
 reactjs 구글 개발자도구                                                

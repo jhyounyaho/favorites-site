@@ -89,6 +89,10 @@ https://ant.design/
 form 예시                 
 https://getbootstrap.com/docs/4.2/components/forms/
                           
+# skill
+drag                                  
+https://htmldom.dev/create-resizable-split-views/                         
+                                   
 # DB                    
 mongoDB                    
 https://www.mongodb.com/                    

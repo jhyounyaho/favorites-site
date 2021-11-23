@@ -84,6 +84,8 @@ flex 설명
 https://getbootstrap.com/docs/4.4/utilities/flex/    
 Ant Design - CSS Framework 종류 for ReactJS                  
 https://ant.design/                
+flex 2                   
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/           
                
 # html              
 form 예시                 
